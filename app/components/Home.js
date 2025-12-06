@@ -318,7 +318,7 @@ export default function Hero({ data }) {
 
           {/* Right Image */}
           <div className="flex justify-center z-10">
-            <div className="rounded-3xl overflow-hidden shadow-2xl border-4 border-white/10 rotate-2 hover:rotate-0 transition duration-500">
+            <div className="rounded-3xl overflow-hidden shadow-2xl  border-4 border-white/10 rotate-2 hover:rotate-0 transition duration-500">
               <img
                 src={data.hero_image?.url} // Ensure this image exists in public folder
                 alt="Classroom Environment"
