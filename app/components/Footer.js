@@ -61,76 +61,51 @@ const FooterLink = ({ href, children }) => (
 
 export default function Footer() {
   return (
-    <footer className="bg-[#1E1D2A] pt-16 pb-8 text-white border-t border-gray-800">
-      <div className="container mx-auto px-6 md:px-12">
+    <footer className="bg-white pt-16 pb-8 border-t border-gray-100 font-sans">
+      <div className="max-w-6xl mx-auto px-6">
         
-        {/* TOP SECTION: Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
+        {/* Top Section: Grid Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 mb-12">
           
-          {/* Column 1: Brand Info (Takes up 2 columns on large screens) */}
-          <div className="lg:col-span-2 space-y-6">
-            <h3 className="text-3xl font-bold tracking-tight text-white">WILA</h3>
-            <p className="text-gray-400 text-sm leading-relaxed max-w-sm">
-              Win In Life Academy transforms careers through industry-led education, cutting-edge AI tools, and a commitment to 100% placement support.
+          {/* Column 1: Brand & Description (Spans half width on desktop) */}
+          <div className="md:col-span-6">
+            <h2 className="text-2xl font-bold text-[#b91c68] mb-4 tracking-tight">
+              WILA <span className="text-[#b91c68]">•</span>
+            </h2>
+            <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
+              Win In Life Academy transforms careers through industry-led education.
             </p>
-            {/* Newsletter Input (Optional enhancement) */}
-            <div className="flex gap-2 max-w-xs pt-2">
-                <input 
-                    type="email" 
-                    placeholder="Enter your email" 
-                    className="bg-white/5 border border-white/10 rounded px-4 py-2 text-sm text-white focus:outline-none focus:border-pink-500 w-full"
-                />
-                <button className="bg-pink-600 hover:bg-pink-700 px-4 py-2 rounded text-sm font-semibold transition">
-                    Subscribe
-                </button>
-            </div>
           </div>
 
-          {/* Dynamic Link Columns */}
-          {FOOTER_LINKS.map((section, index) => (
-            <div key={index} className="space-y-4">
-              <h4 className="text-lg font-semibold text-white tracking-wide">
-                {section.title}
-              </h4>
-              <ul className="space-y-2">
-                {section.items.map((link, idx) => (
-                  <FooterLink key={idx} href={link.href}>
-                    {link.label}
-                  </FooterLink>
-                ))}
-              </ul>
-            </div>
-          ))}
+          {/* Column 2: Quick Links */}
+          <div className="md:col-span-3">
+            <h3 className="text-[#22c55e] font-bold mb-6 text-sm">Quick Links</h3>
+            <ul className="space-y-4 text-sm text-gray-400">
+              <li><a href="#" className="hover:text-[#b91c68] transition-colors">About</a></li>
+              <li><a href="#" className="hover:text-[#b91c68] transition-colors">Curriculum</a></li>
+              <li><a href="#" className="hover:text-[#b91c68] transition-colors">Placements</a></li>
+              <li><a href="#" className="hover:text-[#b91c68] transition-colors">Contact</a></li>
+            </ul>
+          </div>
+
+          {/* Column 3: Legal */}
+          <div className="md:col-span-3">
+            <h3 className="text-[#22c55e] font-bold mb-6 text-sm">Legal</h3>
+            <ul className="space-y-4 text-sm text-gray-400">
+              <li><a href="#" className="hover:text-[#b91c68] transition-colors">Privacy Policy</a></li>
+              <li><a href="#" className="hover:text-[#b91c68] transition-colors">Terms of Service</a></li>
+            </ul>
+          </div>
+
         </div>
 
-        {/* SEPARATOR */}
-        <div className="border-t border-white/10 my-8"></div>
-
-        {/* BOTTOM SECTION */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-          
-          {/* Copyright */}
-          <p className="text-gray-500 text-sm">
-            © {new Date().getFullYear()} Win In Life Academy. All rights reserved.
+        {/* Bottom Section: Divider & Copyright */}
+        <div className="border-t border-gray-200 pt-8 flex justify-center">
+          <p className="text-gray-400 text-xs">
+            © 2025 Win In Life Academy. All rights reserved.
           </p>
-
-          {/* Social Media Icons */}
-          <div className="flex space-x-4">
-            {SOCIAL_LINKS.map((social, index) => {
-                const Icon = social.icon;
-                return (
-                    <a 
-                        key={index} 
-                        href={social.href} 
-                        className="p-2 bg-white/5 rounded-full hover:bg-pink-600 hover:text-white text-gray-400 transition-all duration-300"
-                        aria-label="Social Link"
-                    >
-                        <Icon size={18} />
-                    </a>
-                );
-            })}
-          </div>
         </div>
+
       </div>
     </footer>
   );
