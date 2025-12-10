@@ -644,7 +644,7 @@ export default function Hero({ data = {} }) {
         <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="z-10 text-center lg:text-left">
             <div className="inline-block bg-yellow-400 text-[#4A0B2F] px-4 py-1 rounded-full text-sm font-bold mb-6 tracking-wide">
-              {/* {heroTitle} */}
+              {heroTitle} rio
             </div>
             <h1 className="text-white text-4xl lg:text-6xl font-extrabold leading-tight">
               Advanced Diploma in <br />
